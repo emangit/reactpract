@@ -8,7 +8,7 @@ class App extends Component {
     persons: [
       {id: 'asdf', name: 'Max', age: 28},
       {id: 'jkl', name: 'Manu', age: 29},
-      {id: 'zxcv', name: 'Stephanie', age: 26}
+      {id: 'zxcv', name: 'Alexus', age: 26}
     ],
       showPersons: false
   }
@@ -46,17 +46,8 @@ class App extends Component {
   }
 
   render() {
-
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
     let persons = null;
+    let btnClass = '';
 
     if(this.state.showPersons){
         persons = (
@@ -72,7 +63,7 @@ class App extends Component {
             </div>
         );
 
-        style.backgroundColor='red';
+        btnClass = classes.Red;
 
     }
 
@@ -89,8 +80,8 @@ class App extends Component {
         <div className={classes.App}>
           <h1>I am a React app!</h1>
           <p className={assignedClasses.join(' ')}>This is really working!</p>
-          <button style={style}
-                  onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          <button className={btnClass}
+              onClick={this.togglePersonsHandler}>Toggle Persons</button>
             {persons}
         </div>
 
