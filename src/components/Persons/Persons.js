@@ -8,6 +8,7 @@ class Persons extends Component {
     //    return state;
     //}
 
+
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[Persons.js] shouldComponentUpdate');
         return true;
@@ -15,9 +16,12 @@ class Persons extends Component {
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('[Persons.js] getSnapshotBeforeUpdate');
+        return{message: "snapshot"}
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('[Persons.js] componentDidUpdate');
+        console.log(snapshot);
     }
 
     render() {
